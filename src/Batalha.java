@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jogo_rpg;
 
 /**
  *
@@ -13,6 +12,11 @@ public class Batalha {
 
     private Monstro m;
     private Personagem p;
+
+    public Batalha( Monstro m, Personagem p) {
+        this.m = m;
+        this.p = p;
+    }
 
     public void batalha(int defesa, int ataque, int vida) {
         //Fazer o método que realiza as batalhas entre o personagem e os monstros.

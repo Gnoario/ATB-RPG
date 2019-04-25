@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jogo_rpg;
 
 /**
  *
@@ -18,7 +17,7 @@ public class Jogo_RPG {
         Monstro m = new Monstro(10, 100, 60, 0);
         System.out.println(m.random(5, 10));
 
-        Batalha b = new Batalha();
+        Batalha b = new Batalha(m, p);
         b.batalha(0, 0, 0);
     }
 }
