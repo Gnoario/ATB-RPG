@@ -23,7 +23,7 @@ public class Monsters extends Character {
     }
 
     public void respawnMonsters(){
-        
+        super.setHealth(super.getMax_health());
     }
     // Random r = new Random();
     // if (r.nextInt() != 0) {

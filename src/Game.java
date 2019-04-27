@@ -19,7 +19,7 @@ public class Game {
 
         // Protagonista
         // Nome/ataque/defesa/vida/vida_max/armadura/location/special/danoLanca/danoEspada/danoFlecha/aljavaMax
-        Protagonist p = new Protagonist("Lireelf", 100, 50, 100,100, 100, 0, 2, 25, 20, 40, 20);
+        Protagonist p = new Protagonist("Lireelf", 100, 50, 100, 100, 100, 0, 2, 25, 20, 40, 20);
 
         // Monstros
         // Nome/Ataque/defesa/vida/vida_max/armadura/location
@@ -30,8 +30,8 @@ public class Game {
 
         // Localizações
         // Descrição/Tag/Objetivo/localização
-        Location guilda = new Location("description", "Guilda", "bundinha", 0);
-        Location florest = new Location("description", "Floresta de Rammith", "caguei", 1);
+        Location guilda = new Location("description", "Guilda", "Objective", 0);
+        Location florest = new Location("description", "Floresta de Rammith", "Objective", 1);
         Location monstersGroups = new Location("description", "Caverna Rasa", "objective", 2);
         Location rammith = new Location("description", "Rammith", "perereca", 6);
         Location akatosh = new Location("description", "Monte Akatosh", "objective", 7);
@@ -40,7 +40,7 @@ public class Game {
         Location skelligeFlorest = new Location("description", "Pântano de Skellige", "objective", 11);
         Location jumanju = new Location("description", "Cidade perdida de Jumanju", "objective", 12);
 
-        //adicionando locais para o jogador caminhar pelo mapa
+        // adicionando locais para o jogador caminhar pelo mapa
         p.adLocation(guilda);
         p.adLocation(florest);
         p.adLocation(monstersGroups);
@@ -60,10 +60,11 @@ public class Game {
 
         // Menu
         System.out.println(
-                "\n\tBem-vindo ao jogo\n" + "Aqui estão os comandos do jogo, divitar-se!!\n" + p.lookComands());
-
+                "\t\nBem-vindo ao jogo\n" + "Aqui estão os comandos do jogo, divirta-se!!\n" + p.lookComands());
+        System.out.println(
+                "Você inicia o jogo na guilda, a qualquer momento você pode olhar o mapa ou olhar a descrição do local\n");
         do {
-            System.out.println("Por favor digite um comando: \n");
+            System.out.println("\nPor favor digite um comando: \n");
             way = scanner.nextLine();
             switch (way) {
             case "UP":
@@ -111,13 +112,21 @@ public class Game {
                 System.out.println(p.lookComands());
                 break;
 
+            case "LOOK LOCATION":
+                System.out.println(p.lookLocation());
+                break;
+
+            case "EXIT":
+                System.out.println("Adeus até breve!!");
+                break;
+
             default:
-                System.out.println("Por favor digite um comando válido!!\n");
-                System.out.println(p.lookComands());
+                System.out.println("Por favor digite um comando válido!!\nDigite LOOK COMANDS para ver os comandos.\n");
+                // System.out.println(p.lookComands());
                 break;
             }
 
-        } while (way.equalsIgnoreCase("EXIT"));
+        } while (!way.equals("EXIT"));
 
     }
 }

@@ -69,6 +69,10 @@ public class Character {
         return health;
     }
 
+    public int getMax_health(){
+        return max_health;
+    }
+
     public void setHealth(int health) {
         this.health = health;
     }

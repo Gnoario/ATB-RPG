@@ -1,5 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 public class Protagonist extends Character {
     int danoLanca;
     int danoEspada;
@@ -29,6 +27,20 @@ public class Protagonist extends Character {
         return obj;
     }
 
+    //   Olhar o local que você se encontra dentro do jogo e a descrição
+    public String lookLocation() {
+        String description = "";
+        String tag = "";
+        for (int i = 0; i < locations.length; i++) {
+            if (locations[i].getLocationMap() == super.getLocation()) {
+                description = locations[i].getDescription();
+                tag = locations[i].getTag();
+            }
+
+        }
+        return "\n" + tag + "\n" + description;
+    }
+
     // O jogador retorna para guilda, emergencialmente
     public void run() {
         super.setLocation(0);
@@ -36,10 +48,11 @@ public class Protagonist extends Character {
 
     // Olhar os comandos disponíveis
     public String lookComands() {
-        return "LEFT, RIGHT, UP, DOWN - MOVE\n" + "ATTACK - ATTACK MONSTERS\n" + "STATUS - LOOK STATUS PROTAGONIST\n"
-                + "LOOK MONSTER - LOOK MONSTERS THE AREA\n" + "RUN - RUN FOR INIT\n" + "EXIT - CLOSE THE GAME\n"
-                + "MAP - LOOK THE MAP\n" + "LOOK OBJECTIVE - LOOK OBJECTIVE LOCAL\n"
-                + "LOOK COMANDS - LOOK THE COMANDS\n";
+        return "\tLEFT, RIGHT, UP, DOWN -        MOVE\n" + "\tATTACK -       ATTACK MONSTERS\n" 
+                + "\tSTATUS -       LOOK STATUS PROTAGONIST\n"+"\tLOOK MONSTER - LOOK MONSTERS THE AREA\n" 
+                + "\tRUN - RUN FOR INIT\n" + "\tEXIT -     CLOSE THE GAME\n"
+                + "\tMAP - LOOK THE MAP\n" + "\tLOOK OBJECTIVE -      LOOK OBJECTIVE LOCAL\n"
+                + "\tLOOK COMANDS -      LOOK THE COMANDS\n" + "\tLOOK LOCATIONS -       LOOK THE LOCATIONS\n";
     }
 
     public String lookMap() {

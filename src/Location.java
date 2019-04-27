@@ -34,9 +34,4 @@ public class Location {
         return tag;
     }
 
-    public void lookLocation() {
-
-    }
-
-
 }
