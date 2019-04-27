@@ -9,63 +9,82 @@
  * @author natha
  */
 public class Character {
-    private String nome;
-    private int ataque;
-    private int defesa;
-    private int vida;
-    private int armadura;
+    private String name;
+    private int damage;
+    private int defense;
+    private int health;
+    private int arm;
     private final int max_arm = 100;
-    private final int max_vida = 100;
-    protected Location location;
+    private final int max_health;
+    private int location;
+    Location locations[] = new Location[9];
+    int size;
 
-    Character(String nome, int ataque, int defesa, int vida, int armadura, Location location) {
-        this.nome = nome;
-        this.ataque = ataque;
-        this.defesa = defesa;
-        this.vida = vida;
-        this.armadura = armadura;
+    Character(String name, int damage, int defense, int health, int max_health, int arm, int location) {
+        this.name = name;
+        this.damage = damage;
+        this.defense = defense;
+        this.health = health;
+        this.arm = arm;
         this.location = location;
+        this.max_health = max_health;
     }
 
+    // Status do jogador
     @Override
     public String toString() {
-        return "\n\tStatus " + "\nAtaque: " + ataque + "   Defesa: " + defesa + "\nVida: " + vida + "/" + max_vida
-                + "   Armadura: " + armadura + "/" + max_arm;
+        return "\n\tStatus " + "\nAtaque: " + damage + "   Defesa: " + defense + "\nVida: " + health + "/" + max_health
+                + "   Armadura: " + arm + "/" + max_arm;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public Location getLocation() {
+    public int getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
+    public void setLocation(int location) {
         this.location = location;
     }
 
-    public int getAtaque() {
-        return ataque;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
-    public int getDefesa() {
-        return defesa;
+    public int getDefense() {
+        return defense;
     }
 
-    public void setDefesa(int defesa) {
-        this.defesa = defesa;
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 
-    public int getVida() {
-        return vida;
+    public int getHealth() {
+        return health;
     }
 
-    public void setVida(int vida) {
-        this.vida = vida;
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public Location get(int index) {
+        if (index >= 0 && index < size) {
+            return locations[index];
+        }
+        return null;
+    }
+
+    // Adiciona localizações ao mapa
+    public void adLocation(Location location) {
+        if (size >= 0 && size < 9) {
+            locations[size] = location;
+            size++;
+        }
     }
 }

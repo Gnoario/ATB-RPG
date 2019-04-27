@@ -13,13 +13,17 @@ import java.util.Random;
  */
 public class Monsters extends Character {
 
-    public Monsters(String nome, int ataque, int defesa, int vida, int armadura, int location) {
-        super(nome, ataque, defesa, vida, armadura, location);
+    public Monsters(String name, int damage, int defense, int health, int max_health, int arm, int location) {
+        super(name, damage, defense, health, max_health, arm, location);
     }
 
     public int random(int min, int max) {
         Random r = new Random();
         return (r.nextInt(max - (min - 1)) + min);
+    }
+
+    public void respawnMonsters(){
+        
     }
     // Random r = new Random();
     // if (r.nextInt() != 0) {

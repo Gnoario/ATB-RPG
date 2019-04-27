@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
 
 public class Protagonist extends Character {
     int danoLanca;
@@ -5,11 +6,10 @@ public class Protagonist extends Character {
     int danoFlecha;
     int aljavaMax;
     int special;
-    // Location locations;
 
-    public Protagonist(String nome, int ataque, int defesa, int vida, int armadura, Location location, int special,
-            int danoLanca, int danoEspada, int danoFlecha, int aljavaMax) {
-        super(nome, ataque, defesa, vida, armadura, location);
+    public Protagonist(String name, int damage, int defense, int health, int max_health, int arm, int location,
+            int special, int danoLanca, int danoEspada, int danoFlecha, int aljavaMax) {
+        super(name, damage, defense, health, max_health, arm, location);
         this.special = special;
         this.danoLanca = danoEspada;
         this.danoFlecha = danoFlecha;
@@ -17,16 +17,24 @@ public class Protagonist extends Character {
         this.aljavaMax = aljavaMax;
     }
 
-    public void run(Location guilda) {
-        super.setLocation(guilda);
+    // Olhar objetivo do mapa
+    public String lookObjective() {
+        String obj = "";
+        for (int i = 0; i < locations.length; i++) {
+            if (locations[i].getLocationMap() == super.getLocation()) {
+                obj = locations[i].getObjective();
+            }
+
+        }
+        return obj;
     }
 
-    public void lookObjective() {
-        // if (super.getLocation() == locations.getLocationMap()) {
-            System.out.println(super.location.getObjective());
-        // }
+    // O jogador retorna para guilda, emergencialmente
+    public void run() {
+        super.setLocation(0);
     }
 
+    // Olhar os comandos disponíveis
     public String lookComands() {
         return "LEFT, RIGHT, UP, DOWN - MOVE\n" + "ATTACK - ATTACK MONSTERS\n" + "STATUS - LOOK STATUS PROTAGONIST\n"
                 + "LOOK MONSTER - LOOK MONSTERS THE AREA\n" + "RUN - RUN FOR INIT\n" + "EXIT - CLOSE THE GAME\n"
@@ -34,130 +42,139 @@ public class Protagonist extends Character {
                 + "LOOK COMANDS - LOOK THE COMANDS\n";
     }
 
+    public String lookMap() {
+        return "\n\t                                           Floresta de Rammith------Caverna Rasa\n"
+                + "\t                                                      |                     |\n"
+                + "tJumanju------Floresta de Skellige-----Skellige------Guilda               Caverna\n"
+                + "\t                                                      |                     |\n"
+                + "\t                                                   Rammith------------Monte Akatosh\n";
+    }
+
+    // Movimentos do jogador
     public void movePlayer(String direction) {
-        if (super.getLocation()) {
-            if (direction == "UP") {
+        if (super.getLocation() == 0) {
+            if (direction.equalsIgnoreCase("UP")) {
                 super.setLocation(1);
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 super.setLocation(6);
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(10);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
 
         } else if (super.getLocation() == 1) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 super.setLocation(0);
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 super.setLocation(2);
             }
 
         } else if (super.getLocation() == 2) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 super.setLocation(3);
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(1);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
 
         } else if (super.getLocation() == 3) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 super.setLocation(2);
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 super.setLocation(12);
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
 
         } else if (super.getLocation() == 6) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 super.setLocation(0);
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 super.setLocation(7);
             }
 
         } else if (super.getLocation() == 7) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 super.setLocation(3);
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(6);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 System.out.println("Por favor olhe o mapa.");
             }
 
         } else if (super.getLocation() == 10) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(11);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 super.setLocation(0);
             }
 
         } else if (super.getLocation() == 11) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(12);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 super.setLocation(10);
             }
 
         } else if (super.getLocation() == 12) {
-            if (direction == "UP") {
+            if (direction.equalsIgnoreCase("UP")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "DOWN") {
+            if (direction.equalsIgnoreCase("DOWN")) {
                 System.out.println("Por favor olhe o mapa.");
             }
-            if (direction == "LEFT") {
+            if (direction.equalsIgnoreCase("LEFT")) {
                 super.setLocation(13);
             }
-            if (direction == "RIGHT") {
+            if (direction.equalsIgnoreCase("RIGHT")) {
                 super.setLocation(11);
             }
 

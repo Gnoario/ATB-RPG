@@ -7,8 +7,6 @@ public class Location {
     private int locationMap;
     int size;
 
-    Location locations[] = new Location[9];
-
     public Location(String description, String tag, String objective, int locationMap){
         this.description = description;
         this.tag = tag;
@@ -40,24 +38,5 @@ public class Location {
 
     }
 
-    public Location get(int indice) {
-        if (indice >= 0 && indice < size) {
-            return locations[indice];
-        }
-        return null;
-    }
-
-    public void adLocation(Location location) {
-        if (size >= 0 && size < 9) {
-            locations[size] = location;
-            size++;
-        }
-    }
-    //olhar os objetivos que tem que fazer na área
-
-
-    public void lookMap() {
-
-    }
 
 }

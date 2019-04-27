@@ -11,23 +11,23 @@ public void batalha(Monsters m, Protagonist p, int atm, int defm, int vidm) {
     Random r = new Random();
 
     System.out.println("\n\t\t\tSeus Atributos");
-    System.out.println("Ataque: " + p.getAtaque());
-    System.out.println("Defesa: " + p.getDefesa());
-    System.out.println("Vida: " + p.getVida() + "\n");
+    System.out.println("Ataque: " + p.getDamage());
+    System.out.println("Defesa: " + p.getDefense());
+    System.out.println("Vida: " + p.getHealth() + "\n");
 
-    m.setAtaque(atm + r.nextInt(50));
-    m.setDefesa(defm + r.nextInt(30));
-    m.setVida(vidm + r.nextInt(100));
+    m.setDamage(atm + r.nextInt(50));
+    m.setDefense(defm + r.nextInt(30));
+    m.setHealth(vidm + r.nextInt(100));
 
     System.out.println("\t\t\tAtributos Iniciais Inimigo");
-    System.out.println("Ataque Monstro: " + m.getAtaque());
-    System.out.println("Defesa Monstro: " + m.getDefesa());
-    System.out.println("Vida Monstro: " + m.getVida() + "\n");
+    System.out.println("Ataque Monstro: " + m.getDamage());
+    System.out.println("Defesa Monstro: " + m.getDefense());
+    System.out.println("Vida Monstro: " + m.getHealth() + "\n");
     int i = 0;
 
     System.out.println("\t\t\t---------- BATALHA ----------\n");
     do {
-        int dano = (p.getAtaque() - m.getAtaque());
+        int dano = (p.getDamage() - m.getDamage());
         int critical = r.nextInt(10);
         System.out.println("Numero sorteado: " + critical);
         if (critical == 7) {
@@ -38,20 +38,20 @@ public void batalha(Monsters m, Protagonist p, int atm, int defm, int vidm) {
         if (dano <= 0) {
             System.out.println("Dano\n");
             dano = 0;
-            int control = (p.getAtaque() / 2);
+            int control = (p.getDamage() / 2);
             int quebraDef = r.nextInt(control);
-            int defesa = m.getDefesa() - quebraDef;
+            int defesa = m.getDefense() - quebraDef;
             System.out.println("Defesa do inimigo diminuida para: " + defesa);
         }
 
         System.out.println("Dano: " + dano + "\n");
-        int vidaM = (m.getVida() - dano);
+        int vidaM = (m.getHealth() - dano);
         System.out.println("Vida restante: " + vidaM);
         if (vidaM <= 0) {
             System.out.println("O inimigo foi destruído");
         } else {
             //Iniciando a defesa
-            dano = m.getAtaque() - p.getAtaque();
+            dano = m.getDamage() - p.getDamage();
             critical = r.nextInt(10);
             if (critical == 7) {
                 System.out.println("Sofreu dano crítico (+50)");
@@ -60,16 +60,16 @@ public void batalha(Monsters m, Protagonist p, int atm, int defm, int vidm) {
             if (dano <= 0) {
                 System.out.println("Dano\n");
                 dano = 0;
-                int control = m.getAtaque() / 2;
+                int control = m.getDamage() / 2;
                 int quebradef = r.nextInt(control);
-                int defesa = p.getDefesa() - quebradef;
+                int defesa = p.getDefense() - quebradef;
                 System.out.println("Sua defesa foi diminuída para: " + defesa);
             }
         }
         System.out.println("Dano sofrido = " + dano);
-        int vida = (p.getVida() - dano);
+        int vida = (p.getHealth() - dano);
         System.out.println("Sua vida restante: " + vida);
-        if (p.getVida() == 0 || m.getVida() == 0) {
+        if (p.getHealth() == 0 || m.getHealth() == 0) {
             System.out.println(" Game Over :( ");
             i = 0;
         }
