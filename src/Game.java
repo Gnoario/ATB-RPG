@@ -30,15 +30,25 @@ public class Game {
 
         // Localizações
         // Descrição/Tag/Objetivo/localização
-        Location guilda = new Location("description", "Guilda", "Objective", 0);
-        Location florest = new Location("description", "Floresta de Rammith", "Objective", 1);
-        Location monstersGroups = new Location("description", "Caverna Rasa", "objective", 2);
-        Location rammith = new Location("description", "Rammith", "perereca", 6);
-        Location akatosh = new Location("description", "Monte Akatosh", "objective", 7);
-        Location cave = new Location("description", "Caverna de Monstros", "objective", 3);
-        Location skellige = new Location("description", "Skellige", "objective", 10);
-        Location skelligeFlorest = new Location("description", "Pântano de Skellige", "objective", 11);
-        Location jumanju = new Location("description", "Cidade perdida de Jumanju", "objective", 12);
+        Location location = new Location();
+        Location guilda = new Location(location.getDescriptionFile("tag"), "Guilda", location.getObjectiveFile("tag"),
+                0);
+        Location florest = new Location(location.getDescriptionFile("tag"), "Floresta de Rammith",
+                location.getObjectiveFile("tag"), 1);
+        Location monstersGroups = new Location(location.getDescriptionFile("tag"), "Caverna Rasa",
+                location.getObjectiveFile("tag"), 2);
+        Location rammith = new Location(location.getDescriptionFile("tag"), "Rammith", location.getObjectiveFile("tag"),
+                6);
+        Location akatosh = new Location(location.getDescriptionFile("tag"), "Monte Akatosh",
+                location.getObjectiveFile("tag"), 7);
+        Location cave = new Location(location.getDescriptionFile("tag"), "Caverna de Monstros",
+                location.getObjectiveFile("tag"), 3);
+        Location skellige = new Location(location.getDescriptionFile("tag"), "Skellige",
+                location.getObjectiveFile("tag"), 10);
+        Location skelligeFlorest = new Location(location.getDescriptionFile("tag"), "Pântano de Skellige",
+                location.getObjectiveFile("tag"), 11);
+        Location jumanju = new Location(location.getDescriptionFile("tag"), "Cidade perdida de Jumanju",
+                location.getObjectiveFile("tag"), 12);
 
         // adicionando locais para o jogador caminhar pelo mapa
         p.adLocation(guilda);
@@ -118,6 +128,7 @@ public class Game {
 
             case "EXIT":
                 System.out.println("Adeus até breve!!");
+                scanner.close();
                 break;
 
             default:

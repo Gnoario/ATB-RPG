@@ -6,4 +6,12 @@ public class Trap{
         this.name = name;
         this.damage = damage;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getDamage(){
+        return damage;
+    }
 }

@@ -1,4 +1,3 @@
-import java.awt.BorderLayout;
 import java.util.Random;
 import java.util.Scanner;
 
