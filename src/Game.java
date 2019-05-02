@@ -70,9 +70,9 @@ public class Game {
 
         // Menu
         System.out.println(
-                "\t\nBem-vindo ao jogo\n" + "Aqui estão os comandos do jogo, divirta-se!!\n" + p.lookComands());
+                "\tBem-vindo ao jogo\n" + "Aqui estão os comandos do jogo, divirta-se!!\n" + p.lookComands());
         System.out.println(
-                "Você inicia o jogo na guilda, a qualquer momento você pode olhar o mapa ou olhar a descrição do local\n");
+                "\tVocê inicia o jogo na guilda, a qualquer momento você pode olhar o mapa ou olhar a descrição do local\n");
         do {
             System.out.println("\nPor favor digite um comando: \n");
             way = scanner.nextLine();

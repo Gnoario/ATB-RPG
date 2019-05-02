@@ -12,6 +12,10 @@ public class Location {
     private int locationMap;
     static String history = "History.txt";
     private List<Location> locations = new ArrayList<>();
+//    private List<Monsters> monsters = new ArrayList<>();
+//    private List<Trap> traps = new ArrayList<>();
+    private Monsters monsters[];
+    private Trap trap[];
 
     public Location(String description, String tag, String objective, int locationMap) {
         this.description = description;
@@ -22,6 +26,10 @@ public class Location {
 
     public Location() {
 
+    }
+
+    public void addMonsters(){
+        
     }
 
     public void setDescription(String description) {
