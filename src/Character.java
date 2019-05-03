@@ -16,11 +16,13 @@ public class Character {
     private int arm;
     private final int max_arm = 100;
     private final int max_health;
+    private int gold;
     private int location;
     Location locations[] = new Location[9];
-    int size;
+    Object bag[] = new Object[30];
+    int size = 0;
 
-    Character(String name, int damage, int defense, int health, int max_health, int arm, int location) {
+    Character(String name, int damage, int defense, int health, int max_health, int arm, int location, int gold) {
         this.name = name;
         this.damage = damage;
         this.defense = defense;
@@ -28,6 +30,7 @@ public class Character {
         this.arm = arm;
         this.location = location;
         this.max_health = max_health;
+        this.gold = gold;
     }
 
     // Status do jogador
@@ -35,6 +38,20 @@ public class Character {
     public String toString() {
         return "\n\tStatus " + "\nAtaque: " + damage + "   Defesa: " + defense + "\nVida: " + health + "/" + max_health
                 + "   Armadura: " + arm + "/" + max_arm;
+    }
+
+    /**
+     * @return the gold
+     */
+    public int getGold() {
+        return gold;
+    }
+
+    /**
+     * @param gold the gold to set
+     */
+    public void setGold(int gold) {
+        this.gold = gold;
     }
 
     public String getName() {
@@ -69,7 +86,7 @@ public class Character {
         return health;
     }
 
-    public int getMax_health(){
+    public int getMax_health() {
         return max_health;
     }
 
@@ -89,6 +106,17 @@ public class Character {
         if (size >= 0 && size < 9) {
             locations[size] = location;
             size++;
+        }
+    }
+
+    public void adObject(Object object) {
+        int nElements = 0;
+        if (nElements >= 0 && nElements < 30) {
+            bag[nElements] = object;
+            nElements++;
+        }
+        else{
+            System.out.println("\nVocê atingiu o limite máximo do seu inventário\n");
         }
     }
 }

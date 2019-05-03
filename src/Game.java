@@ -19,14 +19,14 @@ public class Game {
 
         // Protagonista
         // Nome/ataque/defesa/vida/vida_max/armadura/location/special/danoLanca/danoEspada/danoFlecha/aljavaMax
-        Protagonist p = new Protagonist("Lireelf", 100, 50, 100, 100, 100, 0, 2, 25, 20, 40, 20);
+        Protagonist p = new Protagonist("Lireelf", 100, 50, 100, 100, 100, 0, 10, 2, 25, 20, 40, 20);
 
         // Monstros
         // Nome/Ataque/defesa/vida/vida_max/armadura/location
-        Monsters goblin = new Monsters("Goblin", 10, 100, 60, 60, 0, 0);
-        Monsters orc = new Monsters("Orc", 10, 100, 60, 60, 0, 0);
-        Monsters ogro = new Monsters("Ogro", 10, 100, 60, 60, 0, 0);
-        Monsters lord_goblin = new Monsters("Lord Goblin", 10, 100, 60, 60, 0, 0);
+        Monster goblin = new Monster("Goblin", 10, 100, 60, 60, 0, 0, 50);
+        Monster orc = new Monster("Orc", 10, 100, 60, 60, 0, 0, 70);
+        Monster ogro = new Monster("Ogro", 10, 100, 60, 60, 0, 0, 90);
+        Monster lord_goblin = new Monster("Lord Goblin", 10, 100, 60, 60, 0, 0, 100);
 
         // Localizações
         // Descrição/Tag/Objetivo/localização

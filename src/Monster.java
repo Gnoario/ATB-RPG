@@ -7,14 +7,15 @@
 
 import java.util.Random;
 
+
 /**
  *
  * @author natha
  */
-public class Monsters extends Character {
-
-    public Monsters(String name, int damage, int defense, int health, int max_health, int arm, int location) {
-        super(name, damage, defense, health, max_health, arm, location);
+public class Monster extends Character {
+    
+    public Monster(String name, int damage, int defense, int health, int max_health, int arm, int location, int gold) {
+        super(name, damage, defense, health, max_health, arm, location, gold);
     }
 
     public int random(int min, int max) {
@@ -22,9 +23,6 @@ public class Monsters extends Character {
         return (r.nextInt(max - (min - 1)) + min);
     }
 
-    public void respawnMonsters(){
-        super.setHealth(super.getMax_health());
-    }
     // Random r = new Random();
     // if (r.nextInt() != 0) {
     // System.out.println(r.nextInt(10));

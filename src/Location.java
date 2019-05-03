@@ -12,10 +12,10 @@ public class Location {
     private int locationMap;
     static String history = "History.txt";
     private List<Location> locations = new ArrayList<>();
-//    private List<Monsters> monsters = new ArrayList<>();
-//    private List<Trap> traps = new ArrayList<>();
-    private Monsters monsters[];
-    private Trap trap[];
+    // private List<Monsters> monsters = new ArrayList<>();
+    // private List<Trap> traps = new ArrayList<>();
+    private Monster monsters[];
+    private Trap traps[];
 
     public Location(String description, String tag, String objective, int locationMap) {
         this.description = description;
@@ -28,8 +28,43 @@ public class Location {
 
     }
 
-    public void addMonsters(){
-        
+    public void addMonsters(Monster monster) {
+        int size = 0;
+        if (size >= 0 && size < 10) {
+            monsters[size] = monster;
+            size++;
+        }
+    }
+
+    public void addTraps(Trap trap) {
+        int size = 0;
+        if (size >= 0 && size < 10) {
+            traps[size] = trap;
+            size++;
+        }
+    }
+
+    public void initMonsters() {
+
+    }
+
+    public void initTraps() {
+
+    }
+
+    public void respawnMonsters() {
+        new Thread() {
+            @Override
+            public void run() {
+
+                for (int i = 0; i < monsters.length; i++) {
+                    monsters[i].setHealth(monsters[i].getMax_health());
+                    ;
+                }
+
+            }
+        }.start();
+
     }
 
     public void setDescription(String description) {
@@ -60,11 +95,11 @@ public class Location {
         return tag;
     }
 
-    public String getDescriptionFile(String tag){
+    public String getDescriptionFile(String tag) {
         return consultLocation(tag).getDescription();
     }
 
-    public String getObjectiveFile(String tag){
+    public String getObjectiveFile(String tag) {
         return consultLocation(tag).getObjective();
     }
 

@@ -6,8 +6,8 @@ public class Protagonist extends Character {
     int special;
 
     public Protagonist(String name, int damage, int defense, int health, int max_health, int arm, int location,
-            int special, int danoLanca, int danoEspada, int danoFlecha, int aljavaMax) {
-        super(name, damage, defense, health, max_health, arm, location);
+            int gold, int special, int danoLanca, int danoEspada, int danoFlecha, int aljavaMax) {
+        super(name, damage, defense, health, max_health, arm, gold, location);
         this.special = special;
         this.danoLanca = danoEspada;
         this.danoFlecha = danoFlecha;
@@ -27,7 +27,7 @@ public class Protagonist extends Character {
         return obj;
     }
 
-    //   Olhar o local que você se encontra dentro do jogo e a descrição
+    // Olhar o local que você se encontra dentro do jogo e a descrição
     public String lookLocation() {
         String description = "";
         String tag = "";
@@ -48,11 +48,11 @@ public class Protagonist extends Character {
 
     // Olhar os comandos disponíveis
     public String lookComands() {
-        return "\tLEFT, RIGHT, UP, DOWN -        MOVE\n" + "\tATTACK -       ATTACK MONSTERS\n" 
-                + "\tSTATUS -       LOOK STATUS PROTAGONIST\n"+"\tLOOK MONSTER - LOOK MONSTERS THE AREA\n" 
-                + "\tRUN - RUN FOR INIT\n" + "\tEXIT -     CLOSE THE GAME\n"
-                + "\tMAP - LOOK THE MAP\n" + "\tLOOK OBJECTIVE -      LOOK OBJECTIVE LOCAL\n"
-                + "\tLOOK COMANDS -      LOOK THE COMANDS\n" + "\tLOOK LOCATIONS -       LOOK THE LOCATIONS\n";
+        return "\tLEFT, RIGHT, UP, DOWN -        MOVE\n" + "\tATTACK -       ATTACK MONSTERS\n"
+                + "\tSTATUS -       LOOK STATUS PROTAGONIST\n" + "\tLOOK MONSTER - LOOK MONSTERS THE AREA\n"
+                + "\tRUN - RUN FOR INIT\n" + "\tEXIT -     CLOSE THE GAME\n" + "\tMAP - LOOK THE MAP\n"
+                + "\tLOOK OBJECTIVE -      LOOK OBJECTIVE LOCAL\n" + "\tLOOK COMANDS -      LOOK THE COMANDS\n"
+                + "\tLOOK LOCATIONS -       LOOK THE LOCATIONS\n";
     }
 
     public String lookMap() {

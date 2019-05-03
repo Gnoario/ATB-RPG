@@ -5,7 +5,7 @@ public class Combat{
 
 Scanner scanner = new Scanner(System.in);
 
-public void batalha(Monsters m, Protagonist p, int atm, int defm, int vidm) {
+public void batalha(Monster m, Protagonist p, int atm, int defm, int vidm) {
     //Fazer o método que realiza as batalhas entre o personagem e os monstros.
     Random r = new Random();
 
