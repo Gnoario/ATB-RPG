@@ -33,6 +33,8 @@ public class Combat {
                     System.out.println("s/n");
                     option = scanner.nextLine();
                     if (option.equalsIgnoreCase("s")) {
+                        int special = p.getSpecial() - 1;
+                        p.setSpecial(special);
                         int health = m.getHealth() - 200;
                         m.setHealth(health);
                         System.out.println("Você desfere 200 de dano no monstro.");

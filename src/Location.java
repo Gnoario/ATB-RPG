@@ -130,14 +130,14 @@ public class Location {
         else {
             System.out.println("Não existe monstros no local.");
         }
-
-        int lvl_1 = random(0, 5);
-        int lvl_2 = random(0, 8);
-        int lvl_3 = random(0, 12);
-        monsters[0].setnElements(lvl_1);
-        monsters[1].setnElements(lvl_2);
-        monsters[2].setnElements(lvl_3);
-        monsters[3].setnElements(1);
+        respawnMonsters();
+        //int lvl_1 = random(0, 5);
+        //int lvl_2 = random(0, 8);
+        //int lvl_3 = random(0, 12);
+        //monsters[0].setnElements(lvl_1);
+        //monsters[1].setnElements(lvl_2);
+        //monsters[2].setnElements(lvl_3);
+        //monsters[3].setnElements(1);
     }
 
     public String lookMonsters() {

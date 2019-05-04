@@ -18,6 +18,13 @@ public class Protagonist extends Character {
         return special;
     }
 
+    /**
+     * @param special the special to set
+     */
+    public void setSpecial(int special) {
+        this.special = special;
+    }
+
     // Olhar objetivo do mapa
     public String lookObjective() {
         String obj = "";
