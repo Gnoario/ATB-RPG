@@ -29,7 +29,7 @@ public class Combat {
             System.out.println("\t\t\t---------- BATALHA ----------\n");
             do {
                 if (p.getSpecial() > 0) {
-                    System.out.println("Você tem pergaminhos" + p.getSpecial() + "disponíveis, deseja utilizar?\n");
+                    System.out.println("Você tem pergaminhos " + p.getSpecial() + " disponíveis, deseja utilizar?\n");
                     System.out.println("s/n");
                     option = scanner.nextLine();
                     if (option.equalsIgnoreCase("s")) {

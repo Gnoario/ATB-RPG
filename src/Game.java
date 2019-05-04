@@ -150,8 +150,8 @@ public class Game {
             case "INVENTORY":
                 String use;
                 Scanner equip = new Scanner(System.in);
+                p.seeBag();
                 do {
-                    p.seeBag();
                     System.out.println("Digite o item que deseja equipar, ou digite BACK para sair: ");
                     use = equip.nextLine();
                     p.equip(use);
@@ -173,7 +173,7 @@ public class Game {
                 }
                 break;
 
-            case "LOOK OBJECTIVE":
+            case "LOOK OBJETIVE":
                 System.out.println(p.lookObjective());
                 break;
 

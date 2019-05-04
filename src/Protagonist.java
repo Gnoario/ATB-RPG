@@ -126,15 +126,15 @@ public class Protagonist extends Character {
         return "\tLEFT, RIGHT, UP, DOWN - > MOVE\n" + "\tATTACK - > ATTACK MONSTERS\n"
                 + "\tSTATUS - > LOOK STATUS PROTAGONIST\n" + "\tLOOK MONSTER - > LOOK MONSTERS THE AREA\n"
                 + "\tRUN - > RUN FOR INIT\n" + "\tEXIT - > CLOSE THE GAME\n" + "\tMAP - > LOOK THE MAP\n"
-                + "\tLOOK OBJECTIVE - > LOOK OBJECTIVE LOCAL\n" + "\tLOOK COMANDS - > LOOK THE COMANDS\n"
-                + "\tLOOK LOCATIONS - > LOOK THE LOCATIONS\n" + "\tBUY - > BUY ITENS\n"
+                + "\tLOOK OBJETIVE - > LOOK OBJECTIVE LOCAL\n" + "\tLOOK COMANDS - > LOOK THE COMANDS\n"
+                + "\tLOOK LOCATION - > LOOK THE LOCATION\n" + "\tBUY - > BUY ITENS\n"
                 + "\tINVENTORY - > OPEN INVENTORY\n";
     }
 
     public String lookMap() {
         return "\n\t                                           Floresta de Rammith------Caverna Rasa\n"
                 + "\t                                                      |                     |\n"
-                + "tJumanju------Floresta de Skellige-----Skellige------Guilda               Caverna\n"
+                + "Jumanju------Pântano de Skellige-----Skellige------Guilda               Caverna\n"
                 + "\t                                                      |                     |\n"
                 + "\t                                                   Rammith------------Monte Akatosh\n";
     }
