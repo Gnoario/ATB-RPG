@@ -15,11 +15,10 @@ public class Character {
     private int health;
     private int arm;
     private final int max_arm = 100;
-    private final int max_health;
+    private int max_health;
     private int gold;
     private int location;
     Location locations[] = new Location[9];
-    Object bag[] = new Object[30];
     int size = 0;
 
     Character(String name, int damage, int defense, int health, int max_health, int arm, int location, int gold) {
@@ -31,6 +30,10 @@ public class Character {
         this.location = location;
         this.max_health = max_health;
         this.gold = gold;
+    }
+
+    public Character(){
+        
     }
 
     // Status do jogador
@@ -106,17 +109,6 @@ public class Character {
         if (size >= 0 && size < 9) {
             locations[size] = location;
             size++;
-        }
-    }
-
-    public void adObject(Object object) {
-        int nElements = 0;
-        if (nElements >= 0 && nElements < 30) {
-            bag[nElements] = object;
-            nElements++;
-        }
-        else{
-            System.out.println("\nVocê atingiu o limite máximo do seu inventário\n");
         }
     }
 }

@@ -5,29 +5,57 @@
  * and open the template in the editor.
  */
 
-import java.util.Random;
-
-
 /**
  *
  * @author natha
  */
 public class Monster extends Character {
-    
-    public Monster(String name, int damage, int defense, int health, int max_health, int arm, int location, int gold) {
+    int nElements;
+    int locationAux;
+    int locationAux2;
+    int locationAux3;
+
+    public Monster(String name, int damage, int defense, int health, int max_health, int arm, int location, int gold,
+            int nElements, int locationAux, int locationAux2, int locationAux3) {
         super(name, damage, defense, health, max_health, arm, location, gold);
+        this.nElements = nElements;
+        this.locationAux = locationAux;
+        this.locationAux2 = locationAux2;
+        this.locationAux3 = locationAux3;
     }
 
-    public int random(int min, int max) {
-        Random r = new Random();
-        return (r.nextInt(max - (min - 1)) + min);
+    /**
+     * @return the nElements
+     */
+    public int getnElements() {
+        return nElements;
     }
 
-    // Random r = new Random();
-    // if (r.nextInt() != 0) {
-    // System.out.println(r.nextInt(10));
-    // return r.nextInt();
-    // }
-    // return 0;
-    // }
+    /**
+     * @return the locationAux
+     */
+    public int getLocationAux() {
+        return locationAux;
+    }
+
+    /**
+     * @return the locationAux2
+     */
+    public int getLocationAux2() {
+        return locationAux2;
+    }
+
+    /**
+     * @return the locationAux3
+     */
+    public int getLocationAux3() {
+        return locationAux3;
+    }
+
+    /**
+     * @param nElements the nElements to set
+     */
+    public void setnElements(int nElements) {
+        this.nElements = nElements;
+    }
 }

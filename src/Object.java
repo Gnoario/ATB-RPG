@@ -6,12 +6,25 @@ public class Object {
     private String name;
     private int atribbute;
     private int amount;
+    private int price;
 
-    public Object(String name, int atribbute, int amount){
-        this.amount = amount;
+    public Object(String name, int atribbute, int price) {
+        this.price = price;
         this.atribbute = atribbute;
         this.name = name;
     }
+
+    public Object(){
+        
+    }
+
+    /**
+     * @return the price
+     */
+    public int getPrice() {
+        return price;
+    }
+
     /**
      * @return the amount
      */
@@ -52,5 +65,9 @@ public class Object {
      */
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void store(String item) {
+
     }
 }

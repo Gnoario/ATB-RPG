@@ -1,9 +1,9 @@
-tag;description;Objective
-tag2;description;Objective
-tag;description;Objective
-tag;description;Objective
-tag;description;Objective
-tag;description;Objective
-tag;description;Objective
-tag;description;Objective
-tag;description;Objective
+0;Bem-Vindo à guilda;Escolha um dos caminhos disponíveis no mapa
+1;A floresta de rammith é onde você encontra pistas sobre a missão;Após conversar com o aldeão da área você descobre que existe um grupo de aventureiros desaparecidos, e parece que um grupo de monstros tem informações sobre eles, lute com os monstros
+2;A caverna rasa é onde você vai encontrar informações dos aventureiros lutando com os monstros;Lutar com os monstros da área
+6;Rammith é uma cidade onde vive certos habitantes que podem ter informações sobre os aventureiros;Ir para o monte akatosh para conseguir mais informações sobre os aventureiros
+7;O monte é onde você encontra um grupo de monstros para conseguir informações;Lute com os monstros
+3;A caverna é onde você tem que investigar;Investigue a caverna, talvez com algum comando você consiga algo
+10;Skellige é a cidade onde você obtem informações sobre a cidade perdida e as recompensas que existem nela;Partir para o Pântano de skellige para procurar pela cidade perdida
+11;O pântano é um lugar perigoso onde pode haver perigos;Lutar com os monstros da área
+12;A cidade perdida de jumanju é onde você procura recompensas perdidas;Para obter a recompensa lute com o monstro do local
